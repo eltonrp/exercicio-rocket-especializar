@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: space-evenly;
+      height: 100vh;
+      /* align-items: center; */
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .balls {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+    }
+    .blue {
+      background-color: blue;
+      transition: 1s;
+    }
+    .blue:hover {
+      width: 400px;
+      transition: 1s;
+    }
+    .violet {
+      background-color: blueviolet;
+      transition: 1s;
+    }
+    .violet:hover {
+      background: green;
+      height: 400px;
+      transition: 1s;
+    }
+    .yellow {
+      background: green;
+      transition:all 1s linear 2s;
+    }
+    .yellow:hover {
+      background: orange;
+      border-radius: 8px;
+      transition:all 1s cubic-bezier(.29, 1.01, 1, -.68);
+      width: 400px;
+      height: 400px;
+      
+    }
+    .black {
+      background: black;
+      position: relative;
+      animation-name: dance;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
+    }
+    
+    @keyframes change {
+      from {
+        background: blueviolet;
+      }
+      to {
+        background: rosybrown;
+      }
+    }
+    @keyframes dance {
+      0% {
+        background: yellow;
+        left: 0;
+        top: 0;
+      }
+      25% {
+        background: orange;
+        left: 600px;
+        top: 0;
+      }
+      50% {
+        background: red;
+        left: 600px;
+        top: 600px;
+      }
+      75% {
+        background: violet;
+        left: 0;
+        top: 600px;
+      }
+      100% {
+        background: purple;
+        left: 0;
+        top: 0;
+      }
+    }
+    .purple {
+      background: purple;
+      position: relative;
+      animation-name: sling;
+      animation-duration: 4s;
+      animation-delay: 2s;
+      animation-fill-mode: both;
+    }
+    @keyframes sling {
+      from {
+        background: red;
+        top: 0;
+      }
+      to {
+        background: pink;
+        top: calc(100% - 100px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="balls black"></div>
+  <div class="balls violet"></div>
+  <div class="balls blue"></div>
+  <div class="balls yellow"></div>
+  <div class="balls purple"></div>
+</body>
+</html>
